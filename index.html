@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Fullscreen Background Image Slideshow with CSS3</title>
+        <link rel="stylesheet" type="text/css" href="css/background.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+        <style>
+        #rolling {
+        		-webkit-animation: rotation 2s infinite linear;
+            padding: 2%;
+        }
+
+        @-webkit-keyframes rotation {
+        		from {
+        				-webkit-transform: rotate(0deg);
+        		}
+        		to {
+        				-webkit-transform: rotate(359deg);
+        		}
+        }
+        </style>
+    </head>
+    <body id="page">
+      <nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px;" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+          <i class="fa fa-remove"></i>
+        </a>
+        <div class="w3-bar-block w3-center">
+          <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Events</a>
+          <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Register</a>
+          <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Sponsors</a>
+          <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">FAQs</a>
+          <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
+        </div>
+        <img class="w3-display-topleft" id="rolling" src="http://www.vitorazevedo.net/external_files/loading_small.png">
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-32 w3-center w3-xlarge w3-display-bottommiddle">
+          <div class="w3-section">
+            <i class="fa fa-facebook-official w3-hover-opacity fa-2x"></i>
+            <i class="fa fa-instagram w3-hover-opacity fa-2x"></i>
+            <!--<i class="fa fa-snapchat w3-hover-opacity fa-2x"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity fa-2x"></i>-->
+            <i class="fa fa-twitter w3-hover-opacity fa-2x"></i>
+            <i class="fa fa-linkedin w3-hover-opacity fa-2x"></i>
+          </div>
+          <p class="w3-medium">© Copyright 2019 Coding Club IIT Jammu - All Rights Reserved </p>
+        </footer>
+      </nav>
+      <div>
+        <img src="images/tree.png" class="w3-display-topright" style="height:70%;z-index:-1;">
+      </div>
+      <div class="w3-black">
+        <span class="w3-button w3-xxlarge  w3-right" style="border-bottom-left-radius:20px;z-index:100;" onclick="w3_open()"><i class="fa fa-bars" style="z-index:100;"></i></span>
+        <ul class="cb-slideshow" style="z-index:-2;">
+            <li><span>Image 01</span><div><!--<h3>text-1</h3>--></div></li>
+            <li><span>Image 02</span><div><!--<h3>text-1</h3>--></div></li>
+            <li><span>Image 03</span><div><!--<h3>text-1</h3>--></div></li>
+            <li><span>Image 04</span><div><!--<h3>text-1</h3>--></div></li>
+            <li><span>Image 05</span><div><!--<h3>text-1</h3>--></div></li>
+            <li><span>Image 06</span><div><!--<h3>text-1</h3>--></div></li>
+        </ul>
+      </div>
+      <div style="z-index:2;">
+        <img src="images/infinity.png" class="w3-display-topleft" style="height:35%;margin: 2%">
+      </div>
+      <div style="z-index:2;">
+        <img src="images/blood.png" class="w3-display-middle img-focus-in" style="height:50%;">
+        <img src="images/sponser.jpg" class="w3-display-topmiddle w3-round" style="height:15%;margin-top: 5%">
+        <img src="images/horror.png" class="w3-display-bottomleft img-focus-in-inf" style="height:60%;">
+        <img src="images/horror.png" class="w3-display-bottomleft text-blur-out" style="height:60%;">
+        <div class="w3-display-middle">
+          <center>
+          <h1 class="maintext text-focus-in">InFinito</h1>
+          <h1 class="datetext"><span id="typed5"></span></h1>
+          </center>
+        </div>
+        
+      </div>
+      <script type="text/javascript">  
+        var typed5 = new Typed('#typed5', {
+          strings: ['29 and 30 September'],
+          typeSpeed: 0,
+          cursorChar: '_',
+          shuffle: true,
+          startDelay:4500,
+        });
+      </script>
+      <script>
+      // Toggle grid padding
+      function myFunction() {
+        var x = document.getElementById("myGrid");
+        if (x.className === "w3-row") {
+          x.className = "w3-row-padding";
+        } else {
+          x.className = x.className.replace("w3-row-padding", "w3-row");
+        }
+      }
+
+      // Open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.width = "100%";
+        document.getElementById("mySidebar").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+      }
+      </script>
+    </body>
+</html>
